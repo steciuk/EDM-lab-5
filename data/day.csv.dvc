@@ -1,0 +1,4 @@
+outs:
+- md5: 15c0da6f6da37eeaf5e70bbec14d1120
+  size: 57569
+  path: day.csv
