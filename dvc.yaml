@@ -1,23 +1,24 @@
 stages:
   process_bikes_day:
-    cmd: python -m prepare_bikes_day
+    cmd: python src/prepare_bikes_day.py
     deps:
-      - prepare_bikes_day.py
+      - src/prepare_bikes_day.py
       - data/day.csv
     outs:
       - data/day_prepared.csv
 
   exercise_1_train:
-    cmd: python -m exercise_1_train
+    cmd: python src/exercise_1_train.py
     deps:
-      - exercise_1_train.py
+      - src/exercise_1_train.py
       - data/day_prepared.csv
     outs:
       - models/exercise_1_rf.pkl
 
   exercise_1_plots:
-    cmd: python -m exercise_1_plots
+    cmd: python src/exercise_1_plots.py
     deps:
+      - src/exercise_1_plots.py
       - models/exercise_1_rf.pkl
       - data/day_prepared.csv
     plots:
