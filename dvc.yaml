@@ -6,3 +6,11 @@ stages:
       - data/day.csv
     outs:
       - data/day_prepared.csv
+
+  exercise_1_train:
+    cmd: python -m exercise_1_train
+    deps:
+      - exercise_1_train.py
+      - data/day_prepared.csv
+    outs:
+      - models/exercise_1_rf.pkl
