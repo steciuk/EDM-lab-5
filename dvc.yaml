@@ -20,6 +20,6 @@ stages:
     deps:
       - models/exercise_1_rf.pkl
       - data/day_prepared.csv
-    outs:
+    plots:
       - plots/exercise_1/pdp_density_plot.png
       - plots/exercise_1/pdp_plot.png
