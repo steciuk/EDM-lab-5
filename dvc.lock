@@ -1,12 +1,12 @@
 schema: '2.0'
 stages:
   process_bikes_day:
-    cmd: python -m prepare_bikes_day
+    cmd: python src/prepare_bikes_day.py
     deps:
     - path: data/day.csv
       md5: 15c0da6f6da37eeaf5e70bbec14d1120
       size: 57569
-    - path: prepare_bikes_day.py
+    - path: src/prepare_bikes_day.py
       md5: ab15e9f84515919723f176ce1a4f6906
       size: 1735
     outs:
@@ -14,12 +14,12 @@ stages:
       md5: e5cc58a5d5a8dbe7a34a2d1f4851a771
       size: 51949
   exercise_1_train:
-    cmd: python -m exercise_1_train
+    cmd: python src/exercise_1_train.py
     deps:
     - path: data/day_prepared.csv
       md5: e5cc58a5d5a8dbe7a34a2d1f4851a771
       size: 51949
-    - path: exercise_1_train.py
+    - path: src/exercise_1_train.py
       md5: bcfe1525ff155658d59ce74043dd4b5e
       size: 727
     outs:
@@ -27,7 +27,7 @@ stages:
       md5: 6305e8b7f9e93ae4fdad2957b4cb7bc6
       size: 5918220
   exercise_1_plots:
-    cmd: python -m exercise_1_plots
+    cmd: python src/exercise_1_plots.py
     deps:
     - path: data/day_prepared.csv
       md5: e5cc58a5d5a8dbe7a34a2d1f4851a771
@@ -35,6 +35,9 @@ stages:
     - path: models/exercise_1_rf.pkl
       md5: 6305e8b7f9e93ae4fdad2957b4cb7bc6
       size: 5918220
+    - path: src/exercise_1_plots.py
+      md5: cfca95b98c67d6e7328f5716a8e151cd
+      size: 1980
     outs:
     - path: plots/exercise_1/pdp_density_plot.png
       md5: c1e289be506ec98ca1b9dcfff0a61d47
