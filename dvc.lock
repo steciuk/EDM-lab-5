@@ -26,3 +26,19 @@ stages:
     - path: models/exercise_1_rf.pkl
       md5: 6305e8b7f9e93ae4fdad2957b4cb7bc6
       size: 5918220
+  exercise_1_plots:
+    cmd: python -m exercise_1_plots
+    deps:
+    - path: data/day_prepared.csv
+      md5: e5cc58a5d5a8dbe7a34a2d1f4851a771
+      size: 51949
+    - path: models/exercise_1_rf.pkl
+      md5: 6305e8b7f9e93ae4fdad2957b4cb7bc6
+      size: 5918220
+    outs:
+    - path: plots/exercise_1/pdp_density_plot.png
+      md5: c1e289be506ec98ca1b9dcfff0a61d47
+      size: 38936
+    - path: plots/exercise_1/pdp_plot.png
+      md5: b4a9729caa2960aa79885eec8c24c8b1
+      size: 846815
