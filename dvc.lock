@@ -1,0 +1,15 @@
+schema: '2.0'
+stages:
+  process_bikes_day:
+    cmd: python -m prepare_bikes_day
+    deps:
+    - path: data/day.csv
+      md5: 15c0da6f6da37eeaf5e70bbec14d1120
+      size: 57569
+    - path: prepare_bikes_day.py
+      md5: ab15e9f84515919723f176ce1a4f6906
+      size: 1735
+    outs:
+    - path: data/day_prepared.csv
+      md5: e5cc58a5d5a8dbe7a34a2d1f4851a771
+      size: 51949
