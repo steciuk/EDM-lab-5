@@ -53,11 +53,11 @@ stages:
       size: 2515206
     - path: src/exercise_3_train.R
       md5: d2b60d4af709c0dff3679dbee32e65e4
-      size: 309
+      size: 317
     outs:
     - path: models/house_model.rds
-      md5: 06bdc402cc0594aa18b007123220e622
-      size: 27147
+      md5: 6a305d6877be659e24dccba9b5dc5bbc
+      size: 26691
   exercise_3_plots:
     cmd: RScript src/exercise_3_plots.R
     deps:
@@ -65,12 +65,12 @@ stages:
       md5: b1e7bdf4f3e61792c0979a5697dc7145
       size: 2515206
     - path: models/house_model.rds
-      md5: 06bdc402cc0594aa18b007123220e622
-      size: 27147
+      md5: 6a305d6877be659e24dccba9b5dc5bbc
+      size: 26691
     - path: src/exercise_3_plots.R
       md5: 1cd6b500a29fe3e2efb3ab5cc8880eac
-      size: 511
+      size: 522
     outs:
     - path: plots/exercise_3/plot.png
-      md5: 44b5d28f23edde5e9a51e3a8f7fabde1
-      size: 34418
+      md5: 0e6553764a211790cb0b66980cfc7f08
+      size: 5445
