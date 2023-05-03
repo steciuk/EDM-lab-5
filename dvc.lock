@@ -45,3 +45,32 @@ stages:
     - path: plots/exercise_1/pdp_plot.png
       md5: b4a9729caa2960aa79885eec8c24c8b1
       size: 846815
+  exercise_3_train:
+    cmd: RScript src/exercise_3_train.R
+    deps:
+    - path: data/kc_house_data.csv
+      md5: b1e7bdf4f3e61792c0979a5697dc7145
+      size: 2515206
+    - path: src/exercise_3_train.R
+      md5: d2b60d4af709c0dff3679dbee32e65e4
+      size: 309
+    outs:
+    - path: models/house_model.rds
+      md5: 06bdc402cc0594aa18b007123220e622
+      size: 27147
+  exercise_3_plots:
+    cmd: RScript src/exercise_3_plots.R
+    deps:
+    - path: data/kc_house_data.csv
+      md5: b1e7bdf4f3e61792c0979a5697dc7145
+      size: 2515206
+    - path: models/house_model.rds
+      md5: 06bdc402cc0594aa18b007123220e622
+      size: 27147
+    - path: src/exercise_3_plots.R
+      md5: 1cd6b500a29fe3e2efb3ab5cc8880eac
+      size: 511
+    outs:
+    - path: plots/exercise_3/plot.png
+      md5: 44b5d28f23edde5e9a51e3a8f7fabde1
+      size: 34418

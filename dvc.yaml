@@ -24,3 +24,19 @@ stages:
     plots:
       - plots/exercise_1/pdp_density_plot.png
       - plots/exercise_1/pdp_plot.png
+  exercise_3_train:
+    cmd: RScript src/exercise_3_train.R
+    deps:
+      - src/exercise_3_train.R
+      - data/kc_house_data.csv
+    outs:
+      - models/house_model.rds
+  exercise_3_plots:
+    cmd: RScript src/exercise_3_plots.R
+    deps:
+      - src/exercise_3_plots.R
+      - data/kc_house_data.csv
+      - models/house_model.rds
+    plots:
+      - plots/exercise_3/plot.png    
+
