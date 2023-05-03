@@ -25,6 +25,23 @@ stages:
       - plots/exercise_1/pdp_density_plot.png
       - plots/exercise_1/pdp_plot.png
 
+  exercise_2_train:
+    cmd: RScript src/exercise_2_train.R
+    deps: 
+      - src/exercise_2_train.R
+      - data/day_prepared.csv
+    outs: 
+      - models/RandomForest_temp_hum.rds
+
+  exercise_2_plots:
+    cmd: RScript src/exercise_2_plots.R
+    deps: 
+      - data/day_prepared.csv
+      - models/RandomForest_temp_hum.rds
+      - src/exercise_2_plots.R
+    outs: 
+      - plots/exercise_2/pdp.png
+
   exercise_3_train:
     cmd: RScript src/exercise_3_train.R
     deps:
