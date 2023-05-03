@@ -1,0 +1,11 @@
+library("iml")
+library("randomForest")
+
+rf_house = readRDS(file = "models/house_model.rds")
+house = read.csv('data/kc_house_data.csv')
+X = subset(house, select = c('bedrooms', 'bathrooms', 'sqft_living', 'sqft_lot', 'floors', 'yr_built'))
+model = Predictor$new(rf_house, data = X, y = house$price)
+effect = FeatureEffects$new(model, features = c('bedrooms', 'bathrooms', 'sqft_living', 'floors'), method = "pdp")
+png("plots/exercise_3/plot.png")
+effect$plot()
+dev.off()
