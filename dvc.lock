@@ -45,3 +45,32 @@ stages:
     - path: plots/exercise_1/pdp_plot.png
       md5: b4a9729caa2960aa79885eec8c24c8b1
       size: 846815
+  exercise_2_train:
+    cmd: RScript src/exercise_2_train.R
+    deps:
+    - path: data/day_prepared.csv
+      md5: e5cc58a5d5a8dbe7a34a2d1f4851a771
+      size: 51949
+    - path: src/exercise_2_train.R
+      md5: f289565a2513d7e86ab4121c8ddba7e0
+      size: 441
+    outs:
+    - path: models/RandomForest_temp_hum.rds
+      md5: 5b0ff75d90920ca10dbb226e71e0bffb
+      size: 493531
+  exercise_2_plots:
+    cmd: RScript src/exercise_2_plots.R
+    deps:
+    - path: data/day_prepared.csv
+      md5: e5cc58a5d5a8dbe7a34a2d1f4851a771
+      size: 51949
+    - path: models/RandomForest_temp_hum.rds
+      md5: 5b0ff75d90920ca10dbb226e71e0bffb
+      size: 493531
+    - path: src/exercise_2_plots.R
+      md5: 57d3b312646cbb69ceb7dc1d51906f32
+      size: 587
+    outs:
+    - path: plots/exercise_2/pdp.png
+      md5: d76519a0f726ff7e211d060c625dcaf9
+      size: 24657
