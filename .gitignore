@@ -162,3 +162,5 @@ cython_debug/
 .vscode/
 
 Rplots.pdf
+.DS_Store
+.DS_store
