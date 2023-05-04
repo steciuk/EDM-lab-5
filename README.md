@@ -2,7 +2,7 @@
 
 ## Report
 
-Report for the lab is available [**here**](docs/report.pdf).
+Report for the lab is available [**here**](doc/report.pdf).
 
 ## Git/GitHub
 
